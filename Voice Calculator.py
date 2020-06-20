@@ -50,6 +50,7 @@ def wish():
         speak("Good Afternoon Aman")
     else:
         speak("Good Evening Aman")
+    print("Hello Aman I am your smart calculator, how can I help you")
     speak("Hello Aman I am your smart calculator, how can I help you")
 
 def name():
