@@ -1,3 +1,4 @@
+import math
 import pyttsx3
 import datetime
 import speech_recognition as sr
@@ -32,6 +33,10 @@ def mul():
     for x in range(length):
         m=m* lst[x]
     return m
+def squareroot():
+    a=lst
+    print(f"Square root of {a} is {math.sqrt(a)}")
+    speak(f"Square root of {a} is {math.sqrt(a)}")
 def div():
     a,b=lst
     return a/b
@@ -42,14 +47,15 @@ def mini():
     return min(lst)
 def maximum():
     return max(lst)
+
 def wish():
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour < 12:
-        speak("Good morning Aman")
+        speak("Good morning Sir")
     elif hour >= 12 and hour < 16:
-        speak("Good Afternoon Aman")
+        speak("Good Afternoon Sir")
     else:
-        speak("Good Evening Aman")
+        speak("Good Evening Sir")
     print("Hello Aman I am your smart calculator, how can I help you")
     speak("Hello Aman I am your smart calculator, how can I help you")
 
@@ -120,11 +126,14 @@ if __name__ == "__main__":
 
         elif 'time' in query:
             time()
+            
 
         elif ("modulo" in query or "modulus" in query or "remainder" in query):
             result = f"Remainder is {modulo()}"
             print(result)
             speak(result)
+        elif 'square root' in query or "squareroot" in query:
+            squareroot() 
         elif 'exit' in query or 'quit' in query or 'cancel process' in query:
             bye = "Thanks For Using Me...\nSee you Again"
             print(bye)
